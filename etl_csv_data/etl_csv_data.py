@@ -24,7 +24,7 @@ my_database.transform(DATA)
 #Let's Insert the DataFrame Data into the Table.
 rows = [(i['id'], i['first_name'], i['last_name'], i['email'], i['gender'], i['ip_address']) for i in data]
 for row in df.itertuples(): 
-    cursor.execute("INSERT INTO DATA (id,           first_name, last_name, email,             gender, ip_address) VALUES (?,            ?, ?, ?, ?, ?);", rows)
+    cursor.execute("INSERT INTO DATA (id, first_name, last_name, email, gender, ip_address) VALUES (?, ?, ?, ?, ?, ?);", rows)
 conn.commit()
 
 #Let's check if the data is safely loaded.
