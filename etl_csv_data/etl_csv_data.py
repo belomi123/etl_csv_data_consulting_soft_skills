@@ -12,12 +12,11 @@ print(df)
 
 #Let's Connect Python to the SQL Server
 #Let's assume that the name of the serveur is my_server, and the name of the database is my_database. 
-conn = pyodbc.connect('Driver={SQL Server}                ;' 'Server=my_server;' 
-               'Database=my_database;'                   'Trusted_Connection=yes;') 
+conn = pyodbc.connect('Driver={SQL Server};' 'Server=my_server;' 'Database=my_database;' 'Trusted_Connection=yes;') 
 cursor = conn.cursor()
 
 #Let's Create a Table in the SQL Server. 
-cursor.execute("CREATE TABLE  DATA (id,                 first_name, last_name, email               , gender, ip_address);")
+cursor.execute("CREATE TABLE  DATA (id, first_name, last_name, email, gender, ip_address);")
 
 #Let's do some transformation on the data.
 my_database.transform(DATA) 
